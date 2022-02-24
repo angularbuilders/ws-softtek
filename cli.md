@@ -23,4 +23,7 @@ ng g resolver home/home
 
 npm run lint
 
+
+npm install -D json-server json-server-auth
+
 ```
