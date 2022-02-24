@@ -12,7 +12,7 @@
       "schematics": {
         "@schematics/angular:component": {
           "inlineStyle": true,
-          "change-detection": "OnPush"
+          "changeDetection": "OnPush"
         },
         "@schematics/angular:application": {
           "strict": true
