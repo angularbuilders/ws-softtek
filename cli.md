@@ -8,4 +8,8 @@ npm install
 ng add @angular-eslint/schematics
 npm install prettier -D
 npm install prettier-eslint eslint-config-prettier eslint-plugin-prettier —D
+
+
+ng g m core
+
 ```
