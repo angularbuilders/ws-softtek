@@ -1,2 +1,8 @@
-/dist
-/node_modules
+.git/
+.github/
+.vscode/
+dist/
+node_modules/
+CHANGELOG.md
+package.json
+package-lock.json
