@@ -18,7 +18,8 @@ ng g c core/footer --export true
 npm run lint
 
 ng g m home --module app.module --route 'home'
-ng g c home/operators
+ng g c home/agencies --type list
+ng g s home/home
 ng g resolver home/home
 
 npm run lint

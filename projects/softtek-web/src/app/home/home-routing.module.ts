@@ -4,7 +4,7 @@ import { HomeComponent } from './home.component';
 import { HomeResolver } from './home.resolver';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, resolve: { operators: HomeResolver } },
+  { path: '', component: HomeComponent, resolve: { agencies: HomeResolver } },
 ];
 
 @NgModule({

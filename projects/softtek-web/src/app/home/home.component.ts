@@ -8,10 +8,10 @@ import { ActivatedRoute } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements OnInit {
-  public operators: any[] = [];
+  public agencies: any[] = [];
   constructor(private route: ActivatedRoute) {}
 
   public ngOnInit(): void {
-    this.operators = this.route.snapshot.data['operators'];
+    this.agencies = this.route.snapshot.data['agencies'];
   }
 }

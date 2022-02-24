@@ -37,7 +37,8 @@
             "suffixes": [
               "Page",
               "Component",
-              "Container"
+              "Form",
+              "List"
             ]
           }
         ],

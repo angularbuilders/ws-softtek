@@ -1,14 +1,13 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'stk-web-operators',
-  templateUrl: './operators.component.html',
+  selector: 'stk-web-agencies',
+  templateUrl: './agencies.list.html',
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class OperatorsComponent implements OnInit {
-  @Input()
-  public operators: any[] = [];
+export class AgenciesList implements OnInit {
+  @Input() agencies: any[] = [];
   constructor() {}
 
   ngOnInit(): void {}
