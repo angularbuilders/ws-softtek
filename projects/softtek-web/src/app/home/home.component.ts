@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { delay, Observable, of, tap, throwError } from 'rxjs';
+import { BehaviorSubject, delay, Observable, of, tap, throwError } from 'rxjs';
 import { HomeService } from './home.service';
 
 @Component({
@@ -10,7 +10,8 @@ import { HomeService } from './home.service';
 })
 export class HomeComponent implements OnInit {
   agencies$: Observable<any[]> | undefined;
-  error: string | undefined;
+  error$ = new BehaviorSubject<string>('');
+
   constructor(private home: HomeService) {}
 
   ngOnInit(): void {
@@ -18,7 +19,7 @@ export class HomeComponent implements OnInit {
     // this.agencies$ = this.getEmptyAgencies();
     this.agencies$ = this.getErroredAgencies().pipe(
       tap({
-        error: (err) => (this.error = err.message),
+        error: (err) => this.error$.next(err.message),
       })
     );
   }

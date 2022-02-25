@@ -9,9 +9,9 @@
 </ng-container>
 
 <ng-template #errorOrLoading>
-  <ng-container *ngIf="error ; else loading"
+  <ng-container *ngIf="error$ | async as error; else loading"
                 #error>
-    <pre>💣 Error !!!</pre>
+    <pre>💣 Error {{ error }}</pre>
   </ng-container>
   <ng-template #loading>
     <pre>🧐 Loading....</pre>
