@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Agency } from './models/agency';
+import { Trip } from './models/trip';
 
 @Injectable({
   providedIn: 'root',
@@ -11,5 +12,8 @@ export class HomeService {
 
   getAgencies$(): Observable<Agency[]> {
     return this.http.get<Agency[]>('http://localhost:3000/agencies');
+  }
+  getTrips$(): Observable<Trip[]> {
+    return this.http.get<Trip[]>('http://localhost:3000/trips');
   }
 }

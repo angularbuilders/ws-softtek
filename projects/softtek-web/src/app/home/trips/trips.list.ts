@@ -1,14 +1,14 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { Agency } from '../models/agency';
+import { Trip } from '../models/trip';
 
 @Component({
-  selector: 'stk-web-agencies',
-  templateUrl: './agencies.list.html',
+  selector: 'stk-web-trips',
+  templateUrl: './trips.list.html',
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AgenciesList implements OnInit {
-  @Input() agencies: Agency[] = [];
+export class TripsList implements OnInit {
+  @Input() trips: Trip[] = [];
   constructor() {}
 
   ngOnInit(): void {}

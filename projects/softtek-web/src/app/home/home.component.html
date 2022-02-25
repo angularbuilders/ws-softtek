@@ -1,19 +1,39 @@
-<ng-container *ngIf="agencies$ | async as agencies; else errorOrLoading">
+<ng-container *ngIf="agencies$ | async as agencies; else errorOrLoadingAgencies">
   <ng-container *ngIf="agencies.length>0; else noData">
     <stk-web-agencies [agencies]="agencies">
     </stk-web-agencies>
   </ng-container>
   <ng-template #noData>
-    <pre>🌈 No data yet!</pre>
+    <pre>🌈 No agencies yet!</pre>
   </ng-template>
 </ng-container>
 
-<ng-template #errorOrLoading>
-  <ng-container *ngIf="error$ | async as error; else loading"
+<ng-template #errorOrLoadingAgencies>
+  <ng-container *ngIf="agenciesError$ | async as error; else loading"
                 #error>
-    <pre>💣 Error {{ error }}</pre>
+    <pre>💣 Agencies Error {{ error }}</pre>
   </ng-container>
   <ng-template #loading>
-    <pre>🧐 Loading....</pre>
+    <pre>🧐 Loading agencies....</pre>
+  </ng-template>
+</ng-template>
+
+<ng-container *ngIf="trips$ | async as trips; else errorOrLoadingTrips">
+  <ng-container *ngIf="trips.length>0; else noData">
+    <stk-web-trips [trips]="trips">
+    </stk-web-trips>
+  </ng-container>
+  <ng-template #noData>
+    <pre>🌈 No trips yet!</pre>
+  </ng-template>
+</ng-container>
+
+<ng-template #errorOrLoadingTrips>
+  <ng-container *ngIf="tripsError$ | async as error; else loading"
+                #error>
+    <pre>💣 Trips Error {{ error }}</pre>
+  </ng-container>
+  <ng-template #loading>
+    <pre>🧐 Loading Trips....</pre>
   </ng-template>
 </ng-template>

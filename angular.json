@@ -35,6 +35,7 @@
               "projects/softtek-web/src/assets"
             ],
             "styles": [
+              "./node_modules/@picocss/pico/css/pico.fluid.classless.min.css",
               "projects/softtek-web/src/styles.css"
             ],
             "scripts": []

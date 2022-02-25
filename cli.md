@@ -11,6 +11,8 @@ npm install prettier-eslint eslint-config-prettier eslint-plugin-prettier —D
 
 npm run lint
 
+npm i @picocss/pico
+
 ng g m core --module app.module.ts
 ng g c core/header --export true
 ng g c core/footer --export true
@@ -20,6 +22,7 @@ npm run lint
 ng g m home --module app.module --route 'home'
 ng g c home/agencies --type list
 ng g s home/home
+ng g c home/trips --type list
 
 npm run lint
 
