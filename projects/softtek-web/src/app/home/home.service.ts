@@ -13,7 +13,13 @@ export class HomeService {
   getAgencies$(): Observable<Agency[]> {
     return this.http.get<Agency[]>('http://localhost:3000/agencies');
   }
+  getAgenciesError$(): Observable<Agency[]> {
+    return this.http.get<Agency[]>('http://localhost:3000/agencies-error');
+  }
   getTrips$(): Observable<Trip[]> {
     return this.http.get<Trip[]>('http://localhost:3000/trips');
+  }
+  getTripsError$(): Observable<Trip[]> {
+    return this.http.get<Trip[]>('http://localhost:3000/trips-error');
   }
 }

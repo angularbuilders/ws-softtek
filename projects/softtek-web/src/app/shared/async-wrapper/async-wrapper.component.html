@@ -1,1 +1,26 @@
-<p>async-wrapper works!</p>
+<ng-container *ngIf="data$ | async as data; else errorOrLoading">
+  <ng-container *ngIf="data.length>0; else noData">
+    💪 Here will be data
+    <ng-container [ngTemplateOutlet]="theData"
+                  [ngTemplateOutletContext]="data"> </ng-container>
+  </ng-container>
+  <ng-template #noData>
+    <pre>🌈 No agencies yet!</pre>
+  </ng-template>
+</ng-container>
+
+<ng-template #errorOrLoading>
+  <ng-container *ngIf="error$ | async as error; else loading"
+                #error>
+    <pre>💣 {{ dataName }} Error {{ error }}</pre>
+  </ng-container>
+  <ng-template #loading>
+    <pre>🧐 Loading {{ dataName }}....</pre>
+  </ng-template>
+</ng-template>
+
+<ng-template #theData
+             let-data>
+  hoping to show data
+  {{ data | json }}
+</ng-template>
