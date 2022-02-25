@@ -1,1 +1,19 @@
-<stk-web-agencies [agencies]="agencies"></stk-web-agencies>
+<ng-container *ngIf="agencies$ | async as agencies; else errorOrLoading">
+  <ng-container *ngIf="agencies.length>0; else noData">
+    <stk-web-agencies [agencies]="agencies">
+    </stk-web-agencies>
+  </ng-container>
+  <ng-template #noData>
+    <pre>🌈 No data yet!</pre>
+  </ng-template>
+</ng-container>
+
+<ng-template #errorOrLoading>
+  <ng-container *ngIf="error ; else loading"
+                #error>
+    <pre>💣 Error !!!</pre>
+  </ng-container>
+  <ng-template #loading>
+    <pre>🧐 Loading....</pre>
+  </ng-template>
+</ng-template>
