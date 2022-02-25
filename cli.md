@@ -12,6 +12,7 @@ npm install prettier-eslint eslint-config-prettier eslint-plugin-prettier —D
 npm run lint
 
 npm i @picocss/pico
+npm install -D json-server json-server-auth
 
 ng g m core --module app.module.ts
 ng g c core/header --export true
@@ -26,8 +27,8 @@ ng g c home/trips --type list
 
 npm run lint
 
-
-npm install -D json-server json-server-auth
+ng g m shared
+ng g c shared/async-wrapper --export true
 
 # ng g resolver home/home
 ```
