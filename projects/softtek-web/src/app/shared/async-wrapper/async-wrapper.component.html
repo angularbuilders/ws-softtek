@@ -1,6 +1,6 @@
 <ng-container *ngIf="data$ | async as data; else errorOrLoading">
   <ng-container *ngIf="data.length>0; else noData">
-    💪 Here will be data
+    {{ data | json }}
     <ng-container [ngTemplateOutlet]="dataTemplate"
                   [ngTemplateOutletContext]="data"> </ng-container>
   </ng-container>
@@ -18,9 +18,3 @@
     <pre>🧐 Loading {{ dataName }}....</pre>
   </ng-template>
 </ng-template>
-
-<!-- <ng-template #theData
-             let-data>
-  hoping to show data
-  {{ data | json }}
-</ng-template> -->

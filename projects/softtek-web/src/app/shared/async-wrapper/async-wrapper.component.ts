@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, TemplateRef } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AsyncWrapperComponent implements OnInit {
-  @Input() dataTemplate: TemplateRef<any>;
+  @Input() dataTemplate!: TemplateRef<any>;
   @Input() dataName: string = '';
 
   @Input() data$: Observable<unknown[]> | undefined;

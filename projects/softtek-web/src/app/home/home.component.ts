@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { BehaviorSubject, delay, Observable, of, tap } from 'rxjs';
+import { BehaviorSubject, delay, Observable, of } from 'rxjs';
 import { HomeService } from './home.service';
 import { Agency } from './models/agency';
 import { Trip } from './models/trip';
@@ -20,11 +20,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.agencies$ = this.getDelayedAgencies();
     // this.agencies$ = this.getEmptyAgencies();
-    this.agencies$ = this.getErroredAgencies().pipe(
-      tap({
-        error: (err) => this.agenciesError$.next(err.message),
-      })
-    );
+    // this.agencies$ = this.getErroredAgencies().pipe(
+    //   tap({
+    //     error: (err) => this.agenciesError$.next(err.message),
+    //   })
+    // );
     this.trips$ = this.getDelayedTrips();
     //this.trips$ = this.getEmptyTrips();
     // this.trips$ = this.getErroredTrips().pipe(

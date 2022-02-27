@@ -3,7 +3,9 @@
                        [error$]="agenciesError$"
                        [dataTemplate]="agencies">
 </stk-web-async-wrapper>
-<ng-template #agencies>
+<ng-template #agencies
+             let-data>
+  {{data | json}}
   <stk-web-agencies [agencies]="data"></stk-web-agencies>
 </ng-template>
 
@@ -12,6 +14,7 @@
                        [error$]="tripsError$"
                        [dataTemplate]="trips">
 </stk-web-async-wrapper>
-<ng-template #trips>
-  <stk-web-trips trips="data"></stk-web-trips>
+<ng-template #trips
+             let-data>
+  <stk-web-trips [trips]="data"></stk-web-trips>
 </ng-template>
