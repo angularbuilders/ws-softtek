@@ -1,31 +1,17 @@
 <stk-web-async-wrapper dataName="Agencies"
                        [data$]="agencies$"
-                       [error$]="agenciesError$">
-  <H1>HOLA</H1>
+                       [error$]="agenciesError$"
+                       [dataTemplate]="agencies">
 </stk-web-async-wrapper>
+<ng-template #agencies>
+  <stk-web-agencies [agencies]="data"></stk-web-agencies>
+</ng-template>
 
 <stk-web-async-wrapper dataName="Trips"
                        [data$]="trips$"
-                       [error$]="tripsError$">
+                       [error$]="tripsError$"
+                       [dataTemplate]="trips">
 </stk-web-async-wrapper>
-
-
-<!-- <ng-container *ngIf="trips$ | async as trips; else errorOrLoadingTrips">
-  <ng-container *ngIf="trips.length>0; else noData">
-    <stk-web-trips [trips]="trips">
-    </stk-web-trips>
-  </ng-container>
-  <ng-template #noData>
-    <pre>🌈 No trips yet!</pre>
-  </ng-template>
-</ng-container>
-
-<ng-template #errorOrLoadingTrips>
-  <ng-container *ngIf="tripsError$ | async as error; else loading"
-                #error>
-    <pre>💣 Trips Error {{ error }}</pre>
-  </ng-container>
-  <ng-template #loading>
-    <pre>🧐 Loading Trips....</pre>
-  </ng-template>
-</ng-template> -->
+<ng-template #trips>
+  <stk-web-trips trips="data"></stk-web-trips>
+</ng-template>
