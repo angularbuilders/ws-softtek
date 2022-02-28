@@ -4,8 +4,7 @@
                        [dataTemplate]="agencies">
 </stk-web-async-wrapper>
 <ng-template #agencies
-             let-data>
-  {{data | json}}
+             let-data="data">
   <stk-web-agencies [agencies]="data"></stk-web-agencies>
 </ng-template>
 
@@ -15,6 +14,6 @@
                        [dataTemplate]="trips">
 </stk-web-async-wrapper>
 <ng-template #trips
-             let-data>
+             let-data="data">
   <stk-web-trips [trips]="data"></stk-web-trips>
 </ng-template>
