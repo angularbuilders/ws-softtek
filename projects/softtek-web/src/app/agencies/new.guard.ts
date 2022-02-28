@@ -18,7 +18,6 @@ export class NewGuard implements CanActivate, CanDeactivate<unknown> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    //return false;
     return this.router.createUrlTree(['/login'], {
       queryParams: { returnUrl: state.url },
     });

@@ -11,6 +11,6 @@ export class AgenciesService {
 
   getAgencies$(): Observable<Agency[]> {
     // return this.http.get<Agency[]>('http://localhost:3000/agencies-notfound');
-    return this.http.get<Agency[]>('http://localhost:3000/agencies').pipe(delay(2000));
+    return this.http.get<Agency[]>('http://localhost:3000/agencies').pipe(delay(500));
   }
 }

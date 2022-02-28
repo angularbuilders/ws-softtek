@@ -11,12 +11,8 @@ export class AuthenticatedGuard implements CanLoad {
     route: Route,
     segments: UrlSegment[]
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
-    //return this.router.parseUrl('/login');
-    // console.log({ segments: segments });
-    // console.log({ activatedRoute: this.activatedRoute.snapshot });
-    // return this.router.createUrlTree(['/login'], {
-    //   queryParams: { returnUrl: this.activatedRoute.snapshot.url },
-    // });
+    return this.router.createUrlTree(['/login'], {
+      queryParams: { returnUrl: this.router.getCurrentNavigation()?.extractedUrl.toString() },
+    });
   }
 }
