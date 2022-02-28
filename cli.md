@@ -44,5 +44,6 @@ ng g c shared/sync-wrapper --export true
 # ng g c agencies/agencies --type list
 
 ng g m agencies/new --module agencies.module --route 'new'
-ng g guard agencies/new --implements CanLoad --implements CanDeactivate
+ng g guard agencies/new --implements CanActivate --implements CanDeactivate
+ng g guard core/authenticated --implements CanLoad
 ```
