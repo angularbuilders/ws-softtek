@@ -1,19 +1,17 @@
 <stk-web-async-wrapper dataName="Agencies"
                        [data$]="agencies$"
-                       [error$]="agenciesError$"
-                       [dataTemplate]="agencies">
+                       [dataTemplate]="agenciesTemplate">
+  <ng-template #agenciesTemplate
+               let-agencies="templateData">
+    <stk-web-agencies [agencies]="agencies"></stk-web-agencies>
+  </ng-template>
 </stk-web-async-wrapper>
-<ng-template #agencies
-             let-data="data">
-  <stk-web-agencies [agencies]="data"></stk-web-agencies>
-</ng-template>
 
 <stk-web-async-wrapper dataName="Trips"
                        [data$]="trips$"
-                       [error$]="tripsError$"
-                       [dataTemplate]="trips">
+                       [dataTemplate]="tripsTemplate">
+  <ng-template #tripsTemplate
+               let-trips="templateData">
+    <stk-web-trips [trips]="trips"></stk-web-trips>
+  </ng-template>
 </stk-web-async-wrapper>
-<ng-template #trips
-             let-data="data">
-  <stk-web-trips [trips]="data"></stk-web-trips>
-</ng-template>

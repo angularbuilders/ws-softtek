@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit, TemplateRef } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'stk-web-async-wrapper',
@@ -11,10 +11,21 @@ export class AsyncWrapperComponent implements OnInit {
   @Input() dataTemplate!: TemplateRef<any>;
   @Input() dataName: string = '';
 
-  @Input() data$: Observable<unknown[]> | undefined;
+  @Input() public set data$(data$: Observable<unknown[]> | undefined) {
+    if (!data$) return;
+    this._data$ = data$.pipe(
+      tap({
+        error: (err) => this.error$.next(err.message),
+      })
+    );
+  }
+  public get data$(): Observable<unknown[]> | undefined {
+    return this._data$;
+  }
+  private _data$: Observable<unknown[]> | undefined;
 
-  @Input() error$: Observable<string> | undefined;
+  public error$ = new BehaviorSubject('');
   constructor() {}
 
-  ngOnInit(): void {}
+  public ngOnInit(): void {}
 }

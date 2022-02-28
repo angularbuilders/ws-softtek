@@ -20,18 +20,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.agencies$ = this.getDelayedAgencies();
     // this.agencies$ = this.getEmptyAgencies();
-    // this.agencies$ = this.getErroredAgencies().pipe(
-    //   tap({
-    //     error: (err) => this.agenciesError$.next(err.message),
-    //   })
-    // );
+    // this.agencies$ = this.getErroredAgencies();
     this.trips$ = this.getDelayedTrips();
-    //this.trips$ = this.getEmptyTrips();
-    // this.trips$ = this.getErroredTrips().pipe(
-    //   tap({
-    //     error: (err) => this.tripsError$.next(err.message),
-    //   })
-    // );
+    // this.trips$ = this.getEmptyTrips();
+    // this.trips$ = this.getErroredTrips();
   }
 
   private getDelayedAgencies(): Observable<Agency[]> {

@@ -1,11 +1,11 @@
 <ng-container *ngIf="data$ | async as data; else errorOrLoading">
   <ng-container *ngIf="data.length>0; else noData">
     <ng-container [ngTemplateOutlet]="dataTemplate"
-                  [ngTemplateOutletContext]="{data:data}">
+                  [ngTemplateOutletContext]="{templateData:data}">
     </ng-container>
   </ng-container>
   <ng-template #noData>
-    <pre>🌈 No agencies yet!</pre>
+    <pre>🌈 No {{ dataName }} yet!</pre>
   </ng-template>
 </ng-container>
 
