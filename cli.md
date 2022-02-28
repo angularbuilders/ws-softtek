@@ -20,7 +20,9 @@ ng g c core/footer --export true
 
 npm run lint
 
-ng g m home --module app.module --route 'home'
+# 1- components and templates
+
+ng g m home --module app.module --route 'remove_home'
 ng g c home/agencies --type list
 ng g s home/home
 ng g c home/trips --type list
@@ -30,5 +32,9 @@ npm run lint
 ng g m shared
 ng g c shared/async-wrapper --export true
 
-# ng g resolver home/home
+# router and resolvers
+
+ng g m agencies --module app.module --route 'agencies'
+ng g s agencies/agencies
+ng g r agencies/agencies
 ```

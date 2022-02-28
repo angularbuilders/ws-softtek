@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { BehaviorSubject, delay, Observable, of } from 'rxjs';
+import { Agency } from '../core/models/agency';
+import { Trip } from '../core/models/trip';
 import { HomeService } from './home.service';
-import { Agency } from './models/agency';
-import { Trip } from './models/trip';
 
 @Component({
   selector: 'stk-web-home',

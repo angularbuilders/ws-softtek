@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { Trip } from '../models/trip';
+import { Trip } from '../../core/models/trip';
 
 @Component({
   selector: 'stk-web-trips',
