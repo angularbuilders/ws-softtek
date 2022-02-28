@@ -5,6 +5,7 @@ import { AgenciesResolver } from './agencies.resolver';
 
 const routes: Routes = [
   { path: '', component: AgenciesComponent, resolve: { agencies: AgenciesResolver } },
+  { path: 'new', loadChildren: () => import('./new/new.module').then(m => m.NewModule) },
 ];
 
 @NgModule({

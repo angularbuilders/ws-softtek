@@ -42,4 +42,7 @@ ng g s agencies/agencies
 ng g r agencies/agencies
 ng g c shared/sync-wrapper --export true
 # ng g c agencies/agencies --type list
+
+ng g m agencies/new --module agencies.module --route 'new'
+ng g guard agencies/new --implements CanLoad --implements CanDeactivate
 ```
