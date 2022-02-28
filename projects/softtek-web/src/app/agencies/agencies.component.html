@@ -1,6 +1,13 @@
-<article>
-  <header>The agencies page</header>
-  <pre>
-    {{ agencies | json }}
-  </pre>
-</article>
+<stk-web-sync-wrapper dataName="Agencies"
+                      [data]="agencies"
+                      [dataTemplate]="agenciesTemplate">
+  <ng-template #agenciesTemplate
+               let-agencies="templateData">
+    <article>
+      <header>The agencies page</header>
+      <pre>
+        {{ agencies | json }}
+      </pre>
+    </article>
+  </ng-template>
+</stk-web-sync-wrapper>

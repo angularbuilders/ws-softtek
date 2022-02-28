@@ -31,10 +31,15 @@ npm run lint
 
 ng g m shared
 ng g c shared/async-wrapper --export true
+ng g c shared/loading --export true
+ng g c shared/error --export true
+ng g c shared/empty --export true
 
 # router and resolvers
 
 ng g m agencies --module app.module --route 'agencies'
 ng g s agencies/agencies
 ng g r agencies/agencies
+ng g c shared/sync-wrapper --export true
+# ng g c agencies/agencies --type list
 ```

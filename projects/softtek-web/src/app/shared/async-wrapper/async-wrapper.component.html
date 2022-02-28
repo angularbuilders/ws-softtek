@@ -1,20 +1,17 @@
 <ng-container *ngIf="data$ | async as data; else errorOrLoading">
-  <ng-container *ngIf="data.length>0; else noData">
-    <ng-container [ngTemplateOutlet]="dataTemplate"
-                  [ngTemplateOutletContext]="{templateData:data}">
-    </ng-container>
-  </ng-container>
-  <ng-template #noData>
-    <pre>🌈 No {{ dataName }} yet!</pre>
-  </ng-template>
+  <stk-web-sync-wrapper [dataName]="dataName"
+                        [data]="data"
+                        [dataTemplate]="dataTemplate">
+  </stk-web-sync-wrapper>
 </ng-container>
 
 <ng-template #errorOrLoading>
   <ng-container *ngIf="error$ | async as error; else loading"
                 #error>
-    <pre>💣 {{ dataName }} Error {{ error }}</pre>
+    <stk-web-error [dataName]="dataName"
+                   [error]="error"></stk-web-error>
   </ng-container>
   <ng-template #loading>
-    <pre>🧐 Loading {{ dataName }}....</pre>
+    <stk-web-loading [dataName]="dataName"></stk-web-loading>
   </ng-template>
 </ng-template>

@@ -1,0 +1,8 @@
+<ng-container *ngIf="data.length>0; else empty">
+  <ng-container [ngTemplateOutlet]="dataTemplate"
+                [ngTemplateOutletContext]="{templateData:data}">
+  </ng-container>
+</ng-container>
+<ng-template #empty>
+  <stk-web-empty [dataName]="dataName"></stk-web-empty>
+</ng-template>

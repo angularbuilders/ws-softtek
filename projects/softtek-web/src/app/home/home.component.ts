@@ -21,9 +21,9 @@ export class HomeComponent implements OnInit {
     this.agencies$ = this.getDelayedAgencies();
     // this.agencies$ = this.getEmptyAgencies();
     // this.agencies$ = this.getErroredAgencies();
-    this.trips$ = this.getDelayedTrips();
+    // this.trips$ = this.getDelayedTrips();
     // this.trips$ = this.getEmptyTrips();
-    // this.trips$ = this.getErroredTrips();
+    this.trips$ = this.getErroredTrips();
   }
 
   private getDelayedAgencies(): Observable<Agency[]> {
